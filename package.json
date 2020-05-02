@@ -1,0 +1,24 @@
+{
+  "name": "burger_quest",
+  "version": "1.0.0",
+  "description": "This app helps you track burgers you want to eat and when they're eaten",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwturner611/Burger_Quest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwturner611/Burger_Quest/issues"
+  },
+  "homepage": "https://github.com/mwturner611/Burger_Quest#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
