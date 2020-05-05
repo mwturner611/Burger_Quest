@@ -1,28 +1,25 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
+var env = require("dotenv").config({path: '../.env'});
 
-
-// orm.selectAll('burgers');
-// orm.insertOne("new Burger");
-// orm.updateOne(4);
 
 
 var burgers = {
-  all: function() {
-    var burgerList = orm.selectAll("burgers")
-    .then(function(){
-      console.log(burgerList)
-      // return burgerList;
-    });   
+  all: function(cb) {
+    orm.selectAll("burgers", function(res){
+      cb(res);
+    });       
   },
-
-  
-  add: function(newBurger) {
-    orm.insertOne(newBurger)
+  add: function(burgerName,cb) {
+    orm.insertOne(burgerName,function(res){
+      cb(res);
+    });
+    
   },
-
-  update: function(id){
-    orm.updateOne(id);
+  update: function(id,cb){
+    orm.updateOne(id,function(res){
+      cb(res)
+    });  
   }
 };
 

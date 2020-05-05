@@ -1,39 +1,48 @@
 // Import MySQL connection.
 var connection = require("./connection.js");
+var env = require("dotenv").config({path: '../.env'});
 
 
 var orm = {
-    selectAll: function(table) {
-        var queryString = "SELECT * FROM ??";
-        connection.query(queryString,[table], function(err, result){
+    selectAll: function(table, cb) {
+        var queryString = "SELECT * FROM " + table + ";";
+        connection.query(queryString, function(err, result){
             if(err) throw err;
             
-            return result;
+            cb(result);
         });
     },
-    insertOne: function(burgerName){
+    insertOne: function(burgerName,cb){
         connection.query("INSERT INTO burgers SET ?",
         {
             burger_name: burgerName,
             devoured: false
 
-        },function(err,results) {
-            if(err){throw err}
-            ;
-        })
+        },function(err,result) {
+            if(err) {
+                throw err;
+            }
+
+            cb(result)
+        });
     },
-    updateOne: function(id){
+    updateOne: function(id,cb){
+
+        var nbrID = parseInt(id);
+
         connection.query("UPDATE burgers SET ? WHERE ?",
         [
             {
                 devoured: true
             },
             {
-                id: id
+                id: nbrID
             }
         ],
-        function(err,results){
+        function(err,result){
             if(err){throw err}
+
+            cb(result);
         })
     }
 };
