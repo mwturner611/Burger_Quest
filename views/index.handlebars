@@ -1,8 +1,12 @@
-<h1>Burger Quest!</h1>
-<div class="row">
+<h1 class="text-center">Burger Quest!</h1>
 
-  <div class="col-lg-6">
-<h2>Burgers Yet to be Devoured!</h2>
+<div class="row" align="center">
+<img src="/assets/img/burger.png" alt="Burger icon" height="80" width="80">
+</div>
+<div class="row d-flex justify-content-center">
+
+  <div class="col-lg-6" align="center">
+<h2>I'm Eating these Next!</h2>
 
 <ul>
   {{#each burgers}}
@@ -12,7 +16,7 @@
   {{/each}}
 </ul>
   </div>
-<div class="col-lg-6">
+<div class="col-lg-6" align="center">
 <h2>Burgers I've Devoured!</h2>
 
 <ul>
@@ -25,6 +29,7 @@
 </div>
 </div>
 
+<div class="row form" align="center">
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -35,3 +40,4 @@
 
   <button type="submit">Add Burger</button>
 </form>
+</div>

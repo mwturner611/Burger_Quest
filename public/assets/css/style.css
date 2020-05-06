@@ -1,0 +1,33 @@
+body{
+    background-color: burlywood;
+    margin: 15px;
+}
+
+
+li {
+    padding: 5px;
+    margin: 5px;
+    list-style-type: none;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  .form {
+    margin: 10px;
+    justify-content: center;
+  }
+  .credit {
+    position: absolute;
+    bottom: 10px;
+  }
