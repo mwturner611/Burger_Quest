@@ -1,24 +1,29 @@
-<h1>Burgers!</h1>
+<h1>Burger Quest!</h1>
+<div class="row">
 
+  <div class="col-lg-6">
 <h2>Burgers Yet to be Devoured!</h2>
 
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-      <p> {{burger_name}}</p>      
+      {{> burger-block devoured=false}}      
     {{/unless}}
   {{/each}}
 </ul>
-
+  </div>
+<div class="col-lg-6">
 <h2>Burgers I've Devoured!</h2>
 
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      <p> {{burger_name}}</p>  
+      <li>{{burger_name}}</li>
     {{/if}}
   {{/each}}
 </ul>
+</div>
+</div>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
