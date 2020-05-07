@@ -1,13 +1,19 @@
+{{!-- header --}}
 <h1 class="text-center">Burger Quest!</h1>
 
+{{!-- burger icon --}}
 <div class="row" align="center">
 <img src="/assets/img/burger.png" alt="Burger icon" height="80" width="80">
 </div>
+
+{{!-- row --}}
 <div class="row d-flex justify-content-center">
 
+{{!-- left side column --}}
   <div class="col-lg-6" align="center">
 <h2>I'm Eating these Next!</h2>
 
+{{!-- loop through all the burgers that devoured=false --}}
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
@@ -16,9 +22,12 @@
   {{/each}}
 </ul>
   </div>
+
+  {{!-- right side column --}}
 <div class="col-lg-6" align="center">
 <h2>Burgers I've Devoured!</h2>
 
+{{!-- loop through all the burgers that devoured=true --}}
 <ul>
   {{#each burgers}}
     {{#if devoured}}
@@ -29,6 +38,7 @@
 </div>
 </div>
 
+{{!-- form to add a new burger --}}
 <div class="row form" align="center">
 <h2>Add a Burger</h2>
 <form class="create-form">

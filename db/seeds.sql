@@ -1,3 +1,4 @@
+-- starter file for burgers table
 USE burgers_db;
 
 INSERT INTO burgers (burger_name,devoured)

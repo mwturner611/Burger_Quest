@@ -1,13 +1,17 @@
+// require express
 var express = require("express");
 var env = require("dotenv").config({path: '../.env'});
 
+// set router variable from express
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model burger.js.
 var burgers = require("../models/burger.js");
 
 
 // Create all our routes and set up logic within those routes where required.
+
+// at home page run the burgers.all function to get all burgers
 router.get("/", function(req, res) {
   burgers.all(function(data){
     var list = {
@@ -18,6 +22,7 @@ router.get("/", function(req, res) {
   })
 });
 
+// post route to send burger name to burgers.add function
 router.post("/api/burger", function(req,res){
   burgers.add(req.body.name,function(result){
     
@@ -25,6 +30,7 @@ router.post("/api/burger", function(req,res){
   });
 })
 
+// put route to update a burger's devoured status sending id to burgers.update function
 router.put("/api/burger/:id", function (req,res){
 
 

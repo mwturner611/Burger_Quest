@@ -1,32 +1,39 @@
+/* set background color */
 body{
     background-color: burlywood;
     margin: 15px;
 }
 
-
+/* padding and margin for list */
 li {
     padding: 5px;
     margin: 5px;
     list-style-type: none;
   }
   
+  /* make the label bold */
   .label {
     font-weight: bold;
   }
   
+  /* padding and color */
   .create-update-form {
     padding: 5px;
     margin: 5px;
     background: aqua;
   }
   
+  /* margin */
   .form-group {
     margin-bottom: 5px;
   }
+
+  /* margin centering */
   .form {
     margin: 10px;
     justify-content: center;
   }
+  /* send link to icon website to bottom corner */
   .credit {
     position: absolute;
     bottom: 10px;
