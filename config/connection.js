@@ -1,13 +1,23 @@
 var mysql = require("mysql");
 var env = require("dotenv").config({path: '../.env'});
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: `${process.env.SQLPW}`,
-  database: "burgers_db"
-});
+var connection;
+
+if(process.env.JAWSDB_URL) {
+  connection = mysql.createConnection({
+    host: `${process.env.HOST}`,
+    port: `${process.env.PORT}`,
+    user: `${process.env.USER}`,
+    password: `${process.env.PASSWORD}`,
+    database: `${process.env.DATABASE}`
+})} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: `${process.env.LOCALPASSWORD}`,
+    database: "burgers_db"
+})}
 
 connection.connect(function(err) {
   if (err) {
